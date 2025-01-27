@@ -49,7 +49,9 @@ include(GNUInstallDirs)
 
 find_package(wxWidgets REQUIRED COMPONENTS core base)
 
-include(${wxWidgets_USE_FILE})
+if(wxWidgets_USE_FILE)
+    include(${wxWidgets_USE_FILE})
+endif()
 
 ##########
 # target #

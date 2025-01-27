@@ -6,9 +6,11 @@ project(sharedcategoricaldata VERSION 0.1.0 DESCRIPTION "wxSharedCategoricalData
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 find_package(wxWidgets COMPONENTS core base REQUIRED)
-include(${wxWidgets_USE_FILE})
+if(wxWidgets_USE_FILE)
+    include(${wxWidgets_USE_FILE})
+endif()
 
-find_package(wxCharts CONFIG REQUIRED)
+find_package(wxcharts CONFIG REQUIRED)
 
 add_executable(sharedcategoricaldata 
   WIN32 MACOSX_BUNDLE

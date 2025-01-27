@@ -6,7 +6,9 @@ project(linechart VERSION 0.1.0 DESCRIPTION "wxLineChart sample")
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 find_package(wxWidgets COMPONENTS core base REQUIRED)
-include(${wxWidgets_USE_FILE})
+if(wxWidgets_USE_FILE)
+    include(${wxWidgets_USE_FILE})
+endif()
 
 find_package(wxcharts CONFIG REQUIRED)
 
